@@ -1,0 +1,32 @@
+# Core ML libraries
+torch>=2.0.0
+transformers>=4.35.0
+accelerate>=0.24.0
+datasets>=2.14.0
+peft>=0.6.0
+bitsandbytes>=0.41.0
+
+# Quantization and optimization
+llama-cpp-python>=0.2.0
+sentencepiece>=0.1.99
+tokenizers>=0.14.0
+
+# Vector database for RAG
+chromadb>=0.4.0
+sentence-transformers>=2.2.0
+
+# UI frameworks
+gradio>=4.0.0
+streamlit>=1.28.0
+
+# Utilities
+numpy>=1.24.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+tqdm>=4.65.0
+wandb>=0.15.0
+tensorboard>=2.13.0
+
+# Development tools
+jupyter>=1.0.0
+ipykernel>=6.25.0

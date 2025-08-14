@@ -1,0 +1,38 @@
+# RAG Configuration
+rag:
+  # Document Processing
+  chunk_size: 1000
+  chunk_overlap: 200
+  max_chunks_per_document: 100
+  
+  # Embeddings
+  embedding_model: "all-MiniLM-L6-v2"
+  embedding_dimension: 384
+  
+  # Retrieval
+  top_k: 5
+  similarity_threshold: 0.7
+  max_context_length: 4000
+  
+  # Vector Store
+  vector_store_type: "chromadb"
+  persist_directory: "./data/embeddings"
+  
+  # Supported Formats
+  supported_formats:
+    - ".pdf"
+    - ".txt"
+    - ".docx"
+    - ".md"
+    - ".html"
+  
+  # Text Processing
+  text_processing:
+    remove_extra_whitespace: true
+    normalize_unicode: true
+    remove_special_chars: false
+    lowercase: false
+  
+  # Performance
+  batch_size: 32
+  max_workers: 4

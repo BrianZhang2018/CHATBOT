@@ -1,0 +1,57 @@
+# Fine-tuning Configuration for Mistral-7B
+model:
+  name: "mistralai/Mistral-7B-Instruct-v0.2"
+  max_length: 4096
+  trust_remote_code: true
+
+training:
+  # QLoRA parameters
+  lora_r: 16
+  lora_alpha: 32
+  lora_dropout: 0.1
+  target_modules: ["q_proj", "v_proj", "k_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+  
+  # Training parameters
+  num_epochs: 3
+  per_device_train_batch_size: 1
+  per_device_eval_batch_size: 1
+  gradient_accumulation_steps: 4
+  learning_rate: 2e-4
+  warmup_steps: 100
+  logging_steps: 10
+  save_steps: 500
+  eval_steps: 500
+  
+  # Optimization
+  optim: "paged_adamw_8bit"
+  lr_scheduler_type: "cosine"
+  weight_decay: 0.01
+  max_grad_norm: 0.3
+  
+  # Output
+  output_dir: "./training/output"
+  save_total_limit: 3
+  load_best_model_at_end: true
+  metric_for_best_model: "eval_loss"
+  greater_is_better: false
+
+data:
+  train_file: "./data/train.json"
+  validation_file: "./data/validation.json"
+  test_file: "./data/test.json"
+  max_seq_length: 2048
+  preprocessing_num_workers: 4
+
+quantization:
+  load_in_8bit: true
+  load_in_4bit: false
+  bnb_4bit_compute_dtype: "float16"
+  bnb_4bit_use_double_quant: true
+  bnb_4bit_quant_type: "nf4"
+
+# Hardware optimization for M1 Pro
+hardware:
+  use_mps_device: true  # For Apple Silicon
+  use_cpu: false
+  use_fp16: true
+  use_bf16: false

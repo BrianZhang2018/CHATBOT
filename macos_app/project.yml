@@ -1,0 +1,30 @@
+name: ChatbotApp
+options:
+  bundleIdPrefix: com.example
+  deploymentTarget:
+    macOS: "14.0"
+  xcodeVersion: "15.0"
+
+targets:
+  ChatbotApp:
+    type: application
+    platform: macOS
+    sources:
+      - ChatbotApp
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.example.ChatbotApp
+      PRODUCT_NAME: ChatbotApp
+      MACOSX_DEPLOYMENT_TARGET: 14.0
+      SWIFT_VERSION: 5.0
+      ENABLE_PREVIEWS: YES
+      GENERATE_INFOPLIST_FILE: YES
+    info:
+      path: ChatbotApp/Info.plist
+      properties:
+        CFBundleName: ChatbotApp
+        CFBundleDisplayName: ChatbotApp
+        CFBundleIdentifier: com.example.ChatbotApp
+        CFBundleVersion: 1.0
+        CFBundleShortVersionString: 1.0
+        LSMinimumSystemVersion: 14.0
+        NSHumanReadableCopyright: ""
