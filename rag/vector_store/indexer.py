@@ -209,3 +209,4 @@ class DocumentIndexer:
         except Exception as e:
             logger.error(f"Error resetting index: {str(e)}")
             raise
+

@@ -184,3 +184,4 @@ class ChromaStore:
         except Exception as e:
             logger.error(f"Error resetting collection: {str(e)}")
             raise
+

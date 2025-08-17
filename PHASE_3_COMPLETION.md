@@ -244,3 +244,4 @@ With Phase 3 RAG successfully completed, the next phase will focus on:
 The chatbot now has powerful RAG capabilities that enable it to provide contextually relevant responses based on user-uploaded documents, significantly enhancing its usefulness for domain-specific applications.
 
 **Ready to proceed to Phase 4: Fine-Tuning! 🚀**
+

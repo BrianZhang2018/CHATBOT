@@ -1,0 +1,33 @@
+data_config:
+  filter_quality: high
+  max_length: 1000
+  min_length: 50
+  preserve_technical_terms: true
+evaluation_config:
+  metrics:
+  - perplexity
+  - educational_quality
+  - clarity
+  - technical_accuracy
+  test_split: 0.1
+  validation_split: 0.2
+lora_config:
+  lora_alpha: 64
+  lora_dropout: 0.1
+  lora_r: 32
+  target_modules:
+  - q_proj
+  - v_proj
+  - k_proj
+  - o_proj
+task_info:
+  conversation_count: 2
+  description: Educational explanations of AI/ML concepts
+  output_directory: task_training/ai_ml_education
+  task_name: ai_ml_education
+training_config:
+  batch_size: 2
+  gradient_accumulation_steps: 4
+  learning_rate: 0.0001
+  num_epochs: 4
+  warmup_steps: 200

@@ -1,135 +1,210 @@
-# 🤖 Local AI Chatbot - Streamlit Web UI
+# 🤖 Streamlit Chatbot with Document Manager
 
-A beautiful, modern web interface for your local AI chatbot powered by Ollama and Streamlit.
+## 🎯 Overview
 
-## ✨ Features
+This directory contains the Streamlit-based user interface for the AI chatbot with comprehensive document management capabilities. The system provides a web-based interface for uploading, indexing, and managing documents for RAG-powered conversations.
 
-- **🎨 Modern UI**: Clean, responsive design with beautiful styling
-- **🤖 Model Selection**: Choose from your available Ollama models
-- **⚙️ Customizable Parameters**: Adjust temperature, max tokens, top-p, top-k
-- **💬 System Prompts**: Set custom behavior instructions
-- **📥 Export/Import**: Save and load chat conversations
-- **🔄 Real-time Chat**: Instant responses with typing indicators
-- **📱 Responsive**: Works on desktop and mobile devices
+## 📁 Files
+
+### **Main Application**
+- **`my_app.py`** - Complete chatbot with document manager (main interface)
+- **`document_manager.py`** - Standalone document management interface
+
+### **Startup Script**
+- **`start_enhanced_app.sh`** - Start the complete chatbot with document manager
+
+### **Testing & Utilities**
+- **`test_document_indexing.py`** - Test the document indexing system
+- **`requirements.txt`** - Python dependencies
 
 ## 🚀 Quick Start
 
-### Prerequisites
+### **Main Interface (Recommended)**
+```bash
+# Make sure you're in the streamlit_app directory
+cd ui/streamlit_app
 
-1. **Install Ollama**: https://ollama.ai
-2. **Install Python dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
+# Option 1: Using startup script
+./start_enhanced_app.sh
 
-### Setup
-
-1. **Start Ollama**:
-   ```bash
-   ollama serve
-   ```
-
-2. **Pull a model** (if you haven't already):
-   ```bash
-   ollama pull mistral:7b-instruct
-   ```
-
-3. **Run the Streamlit app**:
-   ```bash
-   streamlit run app.py
-   ```
-
-4. **Open your browser** and go to: `http://localhost:8501`
-
-## 🎛️ Usage
-
-### Sidebar Settings
-
-- **🤖 Model Selection**: Choose your preferred AI model
-- **🎛️ Generation Parameters**: 
-  - **Temperature**: Controls randomness (0 = deterministic, 2 = very random)
-  - **Max Tokens**: Maximum response length
-  - **Top P**: Nucleus sampling parameter
-  - **Top K**: Top-k sampling parameter
-- **💬 System Prompt**: Instructions for AI behavior
-- **🗑️ Chat Controls**: Clear conversation history
-
-### Chat Interface
-
-- **Type messages** in the chat input at the bottom
-- **View responses** with model information and timestamps
-- **Export conversations** as JSON files
-- **Import previous chats** from JSON files
-
-## 📁 File Structure
-
-```
-streamlit_app/
-├── app.py              # Main Streamlit application
-├── requirements.txt    # Python dependencies
-└── README.md          # This file
+# Option 2: Direct command
+streamlit run my_app.py --server.port 8502
 ```
 
-## 🔧 Configuration
+### **Alternative: Standalone Document Manager**
+```bash
+cd ui/streamlit_app
+streamlit run document_manager.py
+```
 
-### Ollama API
-The app connects to Ollama at `http://localhost:11434` by default. If you're running Ollama on a different port or host, modify the `OLLAMA_BASE_URL` variable in `app.py`.
+## 📱 Interface Features
 
-### Custom Styling
-The app includes custom CSS for a modern look. You can modify the styling by editing the CSS section in `app.py`.
+### **🤖 Chat Page**
+- **AI Chatbot Interface**: Chat with your models
+- **RAG Integration**: Get responses enhanced with document context
+- **Chat History**: Export/import conversations
+- **Model Selection**: Choose from available Ollama models
+- **Parameter Tuning**: Adjust temperature, max tokens, etc.
 
-## 🎯 Supported Models
+### **📚 Document Manager Page**
+- **📤 Upload & Index**: Upload documents and add them to knowledge base
+- **📋 Document Library**: View, manage, and delete documents
+- **🔍 Search & Test**: Test document retrieval capabilities
+- **⚙️ Settings**: Configure RAG parameters
 
-Any model that works with Ollama's API, including:
-- `mistral:7b-instruct`
-- `llama2:7b-chat`
-- `llama2:13b-chat`
-- `codellama:7b-instruct`
-- `phi:2.7b`
-- And many more...
+### **⚙️ Settings Page**
+- **System Information**: Check system status
+- **Model Management**: View available models
+- **Configuration**: Reset settings to defaults
 
-## 🚨 Troubleshooting
+## 📤 Document Upload Process
 
-### "Ollama is not running"
-1. Make sure Ollama is installed
-2. Run `ollama serve` in terminal
-3. Check if Ollama is accessible at `http://localhost:11434`
+### **Step 1: Navigate to Document Manager**
+1. Open the enhanced app in your browser
+2. Select **"Document Manager"** from the sidebar navigation
+3. Go to the **"📤 Upload & Index"** tab
 
-### "No models found"
-1. Pull a model: `ollama pull mistral:7b-instruct`
-2. Click "🔄 Refresh Models" in the sidebar
-3. Check available models: `ollama list`
+### **Step 2: Upload Documents**
+1. **Click "Browse files"** or drag and drop documents
+2. **Supported formats**:
+   - 📄 PDF files (`.pdf`)
+   - 📝 Text files (`.txt`)
+   - 📘 Word documents (`.docx`)
+   - 📖 Markdown files (`.md`)
+   - 🌐 HTML files (`.html`, `.htm`)
 
-### Slow responses
-1. Try a smaller model (7B instead of 13B)
-2. Reduce max tokens
-3. Use quantized models (e.g., `mistral:7b-instruct-q4_K_M`)
+3. **Select multiple files** at once for batch processing
 
-## 🎨 Customization
+### **Step 3: Configure Indexing Options**
+- **Chunk Size**: Size of text chunks (100-2000 characters, default: 500)
+- **Chunk Overlap**: Overlap between chunks (0-500 characters, default: 100)
+- **Embedding Model**: Choose embedding model for vector generation
+- **Collection Name**: Name for the document collection in vector database
 
-### Adding New Features
-The app is modular and easy to extend. You can add:
-- Conversation history persistence
-- Multiple chat sessions
-- Model fine-tuning interface
-- RAG (Retrieval Augmented Generation)
-- File upload and analysis
+### **Step 4: Index Documents**
+1. **Click "🚀 Index Documents"** button
+2. **Wait for processing** (progress indicator will show)
+3. **Review results**:
+   - ✅ Successfully indexed documents
+   - ❌ Failed documents (with error details)
+   - 📊 Number of chunks created per document
 
-### Styling
-Modify the CSS in the `st.markdown` section to customize:
-- Colors and themes
-- Font sizes and styles
-- Layout and spacing
-- Button appearances
+## 🔍 Testing Document Retrieval
 
-## 📄 License
+### **Single Query Testing**
+1. Go to **"🔍 Search & Test"** tab
+2. Enter a test query (e.g., "What is machine learning?")
+3. Click **"🔍 Search Documents"**
+4. Review results:
+   - Number of documents found
+   - Similarity scores
+   - Retrieved content preview
 
-This project is open source and available under the MIT License.
+### **Batch Testing**
+1. Select multiple sample queries
+2. Click **"🧪 Run Batch Test"**
+3. Review results table:
+   - Query performance
+   - Documents found per query
+   - Average similarity scores
+   - Processing times
 
-## 🤝 Contributing
+## ⚙️ Configuration
 
-Feel free to submit issues, feature requests, or pull requests to improve the chatbot!
+### **RAG Parameters**
+- **Top K Documents**: Number of documents to retrieve (1-20)
+- **Similarity Threshold**: Minimum similarity score (0.0-1.0)
+- **Max Context Length**: Maximum context length in characters
+
+### **System Requirements**
+- **Python 3.8+**: Required for all components
+- **Ollama**: For AI model inference
+- **ChromaDB**: For vector storage
+- **Streamlit**: For web interface
+
+## 🧪 Testing
+
+### **Test Document Indexing System**
+```bash
+cd ui/streamlit_app
+python test_document_indexing.py
+```
+
+This will verify:
+- ✅ Document Manager initialization
+- ✅ RAG Pipeline setup
+- ✅ Configuration file access
+- ✅ Existing document listing
+- ✅ Document search functionality
+
+## 🛠️ Troubleshooting
+
+### **Common Issues**
+
+#### **1. Configuration File Not Found**
+- **Error**: `No such file or directory: 'config/rag_config.yaml'`
+- **Solution**: The path issue has been fixed. Make sure you're running from the `ui/streamlit_app` directory.
+
+#### **2. Import Errors**
+- **Error**: `ModuleNotFoundError` for RAG components
+- **Solution**: Ensure you're in the correct directory and all dependencies are installed.
+
+#### **3. Ollama Connection Issues**
+- **Error**: Cannot connect to Ollama
+- **Solution**: Start Ollama with `ollama serve` in a separate terminal.
+
+#### **4. Document Upload Fails**
+- **Check file format**: Ensure file is in supported format
+- **Check file size**: Large files may take longer to process
+- **Check permissions**: Ensure write access to documents directory
+
+### **Performance Optimization**
+
+#### **For Large Document Collections**
+- **Increase chunk size**: Reduce number of chunks
+- **Use efficient embedding model**: Choose faster models
+- **Batch processing**: Process documents in batches
+- **Monitor memory usage**: Large collections need more RAM
+
+#### **For Real-time Queries**
+- **Optimize similarity threshold**: Balance speed vs. accuracy
+- **Limit context length**: Reduce processing time
+- **Use caching**: Cache frequently accessed documents
+- **Index optimization**: Use appropriate chunk sizes
+
+## 📊 Current Status
+
+### **✅ Working Features**
+- **Document Upload**: Web-based file upload interface
+- **Document Processing**: Automatic chunking and embedding
+- **Vector Storage**: ChromaDB integration
+- **Document Search**: Semantic search capabilities
+- **RAG Integration**: Context injection for chatbot
+- **Document Management**: View, delete, and manage documents
+- **Testing Interface**: Query testing and batch testing
+- **Configuration Management**: RAG parameter tuning
+
+### **📄 Existing Documents**
+The system currently has 4 sample documents indexed:
+- `machine_learning_guide.txt` (949 bytes)
+- `chatbot_development.md` (1552 bytes)
+- `chatbot_guide.md` (3717 bytes)
+- `sample_document.txt` (1964 bytes)
+
+## 🎉 Summary
+
+The **Document Indexing System** provides a complete solution for:
+
+✅ **Easy document upload** through web interface  
+✅ **Automatic processing** and chunking  
+✅ **Vector storage** in ChromaDB  
+✅ **Semantic search** capabilities  
+✅ **RAG integration** with chatbot  
+✅ **Document management** and testing  
+✅ **Performance monitoring** and optimization  
+
+**No more manual file copying!** Everything is now accessible through a user-friendly web interface that makes document management simple and efficient.
 
 ---
 
-**Happy Chatting! 🤖💬**
+**🚀 Ready to get started? Run the enhanced app and start building your knowledge base!**

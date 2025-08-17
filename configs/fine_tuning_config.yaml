@@ -55,3 +55,4 @@ hardware:
   use_cpu: false
   use_fp16: true
   use_bf16: false
+

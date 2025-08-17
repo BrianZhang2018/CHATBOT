@@ -15,13 +15,18 @@ chatbot/
 │   ├── base/              # Base models (Hugging Face format)
 │   ├── fine_tuned/        # Fine-tuned models
 │   └── quantized/         # Quantized models (GGUF)
+├── rag/                   # RAG system implementation
 ├── scripts/               # Utility scripts
 │   └── setup_fine_tuning.py
 ├── training/              # Training outputs
 │   ├── output/           # Training logs and checkpoints
 │   └── checkpoints/      # Model checkpoints
 ├── ui/                    # User interface
+│   └── streamlit_app/    # Streamlit applications
+├── vector_db_experiments/ # Vector DB playground & experiments
+├── fine_tuning/          # Fine-tuning system
 ├── requirements.txt       # Python dependencies
+├── RAG_GUIDE.md          # Comprehensive RAG documentation
 └── README.md
 ```
 
@@ -60,11 +65,12 @@ streamlit run ui/streamlit_app.py
 
 ### Phase 3: RAG Implementation
 
-1. **Add your documents to `data/raw/`**
+1. **Add your documents to `rag/data/documents/`**
 2. **Run document processing:**
    ```bash
    python scripts/prepare_rag.py
    ```
+3. **📖 See `RAG_GUIDE.md` for complete RAG documentation**
 
 ### Phase 4: Fine-tuning
 
@@ -157,3 +163,4 @@ ollama run your-model-name
 ## 🤝 Contributing
 
 This is a personal project for domain-specific chatbot development. The infrastructure is designed to be modular and extensible for different use cases.
+

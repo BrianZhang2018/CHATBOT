@@ -245,3 +245,4 @@ class RAGPipeline:
             include_metadata: Whether to include metadata
         """
         self.context_builder.update_context_parameters(max_context_length, include_metadata)
+

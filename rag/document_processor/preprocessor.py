@@ -132,3 +132,4 @@ class TextPreprocessor:
         
         logger.info(f"Preprocessed {len(preprocessed_chunks)} chunks")
         return preprocessed_chunks
+

@@ -143,3 +143,4 @@ class DocumentRetriever:
         except Exception as e:
             logger.error(f"Error getting retrieval stats: {str(e)}")
             return {}
+

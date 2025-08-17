@@ -1,0 +1,230 @@
+{
+  "demo": true,
+  "timestamp": "2025-08-14T19:03:12.141674",
+  "description": "Mock E2E testing results demonstrating the testing framework",
+  "base_model": "mistral:7b-instruct (before fine-tuning)",
+  "fine_tuned_model": "mistral:7b-instruct (after LoRA fine-tuning)",
+  "base_results": [
+    {
+      "query": "What is machine learning?",
+      "response": "Machine learning is a type of artificial intelligence that helps computers learn from data.",
+      "response_time": 2.5,
+      "expected_keywords": [
+        "machine learning",
+        "artificial intelligence",
+        "algorithms",
+        "data"
+      ],
+      "keywords_found": [
+        "machine learning",
+        "artificial intelligence",
+        "data"
+      ],
+      "keyword_score": 0.75,
+      "context_score": 0.0,
+      "overall_score": 0.44999999999999996,
+      "category": "basic_rag"
+    },
+    {
+      "query": "How do I implement a chatbot?",
+      "response": "To implement a chatbot, you need a language model and some code.",
+      "response_time": 3.0,
+      "expected_keywords": [
+        "chatbot",
+        "language model",
+        "interface",
+        "RAG",
+        "implementation"
+      ],
+      "keywords_found": [
+        "chatbot",
+        "language model"
+      ],
+      "keyword_score": 0.4,
+      "context_score": 0.0,
+      "overall_score": 0.24,
+      "category": "basic_rag"
+    },
+    {
+      "query": "What are the best practices for fine-tuning?",
+      "response": "Fine-tuning involves training a model on specific data.",
+      "response_time": 3.5,
+      "expected_keywords": [
+        "fine-tuning",
+        "LoRA",
+        "QLoRA",
+        "learning rate",
+        "validation"
+      ],
+      "keywords_found": [
+        "fine-tuning"
+      ],
+      "keyword_score": 0.2,
+      "context_score": 0.0,
+      "overall_score": 0.12,
+      "category": "advanced_rag"
+    },
+    {
+      "query": "Explain RAG systems",
+      "response": "RAG systems combine retrieval and generation.",
+      "response_time": 4.0,
+      "expected_keywords": [
+        "RAG",
+        "retrieval",
+        "augmented",
+        "generation",
+        "context"
+      ],
+      "keywords_found": [
+        "RAG",
+        "retrieval",
+        "generation"
+      ],
+      "keyword_score": 0.6,
+      "context_score": 0.0,
+      "overall_score": 0.36,
+      "category": "advanced_rag"
+    },
+    {
+      "query": "What is LoRA?",
+      "response": "LoRA is a technique for efficient fine-tuning.",
+      "response_time": 4.5,
+      "expected_keywords": [
+        "LoRA",
+        "low-rank",
+        "adaptation",
+        "efficient",
+        "fine-tuning"
+      ],
+      "keywords_found": [
+        "LoRA",
+        "efficient",
+        "fine-tuning"
+      ],
+      "keyword_score": 0.6,
+      "context_score": 0.0,
+      "overall_score": 0.36,
+      "category": "advanced_rag"
+    }
+  ],
+  "fine_tuned_results": [
+    {
+      "query": "What is machine learning?",
+      "response": "Based on the technical documentation, machine learning is a subset of artificial intelligence that enables computers to learn from data without being explicitly programmed. According to the documentation, it uses algorithms to identify patterns in data and make predictions or decisions.",
+      "response_time": 2.8,
+      "expected_keywords": [
+        "machine learning",
+        "artificial intelligence",
+        "algorithms",
+        "data"
+      ],
+      "keywords_found": [
+        "machine learning",
+        "artificial intelligence",
+        "algorithms",
+        "data"
+      ],
+      "keyword_score": 1.0,
+      "context_score": 1.0,
+      "overall_score": 1.0,
+      "category": "basic_rag"
+    },
+    {
+      "query": "How do I implement a chatbot?",
+      "response": "According to the implementation guide, to implement a chatbot you need: 1) A language model (like GPT or Llama), 2) A conversation interface, 3) Response generation logic, 4) Optional RAG for knowledge retrieval. Start with a simple framework and iterate based on user feedback.",
+      "response_time": 3.0999999999999996,
+      "expected_keywords": [
+        "chatbot",
+        "language model",
+        "interface",
+        "RAG",
+        "implementation"
+      ],
+      "keywords_found": [
+        "chatbot",
+        "language model",
+        "interface",
+        "RAG",
+        "implementation"
+      ],
+      "keyword_score": 1.0,
+      "context_score": 1.0,
+      "overall_score": 1.0,
+      "category": "basic_rag"
+    },
+    {
+      "query": "What are the best practices for fine-tuning?",
+      "response": "Based on the best practices documentation, the key recommendations for fine-tuning are: 1) Use high-quality, diverse training data, 2) Start with LoRA or QLoRA for efficiency, 3) Use appropriate learning rates, 4) Monitor validation loss, 5) Test on held-out data, 6) Iterate based on performance.",
+      "response_time": 3.4,
+      "expected_keywords": [
+        "fine-tuning",
+        "LoRA",
+        "QLoRA",
+        "learning rate",
+        "validation"
+      ],
+      "keywords_found": [
+        "fine-tuning",
+        "LoRA",
+        "QLoRA",
+        "learning rate",
+        "validation"
+      ],
+      "keyword_score": 1.0,
+      "context_score": 1.0,
+      "overall_score": 1.0,
+      "category": "advanced_rag"
+    },
+    {
+      "query": "Explain RAG systems",
+      "response": "According to the technical documentation, RAG (Retrieval Augmented Generation) systems combine document retrieval with text generation. The system first retrieves relevant documents from a knowledge base, then uses that context to generate more accurate and informed responses.",
+      "response_time": 3.6999999999999997,
+      "expected_keywords": [
+        "RAG",
+        "retrieval",
+        "augmented",
+        "generation",
+        "context"
+      ],
+      "keywords_found": [
+        "RAG",
+        "retrieval",
+        "augmented",
+        "generation",
+        "context"
+      ],
+      "keyword_score": 1.0,
+      "context_score": 1.0,
+      "overall_score": 1.0,
+      "category": "advanced_rag"
+    },
+    {
+      "query": "What is LoRA?",
+      "response": "Based on the documentation, LoRA (Low-Rank Adaptation) is a parameter-efficient fine-tuning technique that adds small adapter layers to a pre-trained model. It significantly reduces the number of trainable parameters while maintaining performance, making it ideal for resource-constrained environments.",
+      "response_time": 4.0,
+      "expected_keywords": [
+        "LoRA",
+        "low-rank",
+        "adaptation",
+        "efficient",
+        "fine-tuning"
+      ],
+      "keywords_found": [
+        "LoRA",
+        "low-rank",
+        "adaptation",
+        "efficient",
+        "fine-tuning"
+      ],
+      "keyword_score": 1.0,
+      "context_score": 1.0,
+      "overall_score": 1.0,
+      "category": "advanced_rag"
+    }
+  ],
+  "summary": {
+    "base_avg_score": 0.30599999999999994,
+    "fine_tuned_avg_score": 1.0,
+    "improvement": 0.6940000000000001
+  }
+}

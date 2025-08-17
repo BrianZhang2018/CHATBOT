@@ -473,3 +473,4 @@ if __name__ == "__main__":
         print("   - 'web development'")
     else:
         print("❌ Failed to create sample data")
+

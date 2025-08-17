@@ -158,3 +158,4 @@ class DocumentLoader:
         
         logger.info(f"Loaded {len(documents)} documents from {directory_path}")
         return documents
+

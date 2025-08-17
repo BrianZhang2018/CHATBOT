@@ -1,0 +1,208 @@
+{
+  "base_model": "mistral:7b-instruct",
+  "fine_tuned_model": "deepseek-r1:latest",
+  "timestamp": "2025-08-14T19:01:58.432603",
+  "base_results": {
+    "model": "mistral:7b-instruct",
+    "timestamp": "2025-08-14T18:58:17.561602",
+    "test_cases": [
+      {
+        "query": "What is machine learning?",
+        "response": "Exception: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=30)",
+        "response_time": 30.007429838180542,
+        "expected_keywords": [
+          "machine learning",
+          "artificial intelligence",
+          "algorithms",
+          "data"
+        ],
+        "keywords_found": [],
+        "keyword_score": 0.0,
+        "category": "basic_rag"
+      },
+      {
+        "query": "How do I implement a chatbot?",
+        "response": " Implementing a chatbot involves several steps and requires knowledge in various areas such as natural language processing (NLP), machine learning, and programming. Here's a simplified guide on how to create a basic chatbot:\n\n1. **Define the purpose of your chatbot**: Understand what you want your chatbot to achieve. This could be anything from answering FAQs, providing customer service, or even being a personal assistant.\n\n2. **Choose a platform**: There are several platforms available for building chatbots, such as Dialogflow (Google), Microsoft Bot Framework, Wit.ai (Facebook), and Rasa. Each has its own strengths and weaknesses, so choose one that best suits your needs.\n\n3. **Design the conversation flow**: Outline how you want the conversation to go. This includes defining intents (what the user wants to do or ask), entities (key pieces of information in the conversation), and responses.\n\n4. **Train your chatbot**: Use examples of conversations that match your design to train your chatbot. This helps the bot understand how to interpret and respond to user inputs.\n\n5. **Test and refine your chatbot**: Test your chatbot with various inputs and refine its responses based on feedback. You may need to iterate through this step multiple times to get a well-functioning chatbot.\n\n6. **Deploy your chatbot**: Once you're satisfied with your chatbot, deploy it on the platform of your choice. This could be on your website, social media platforms, or messaging apps.\n\n7. **Monitor and improve your chatbot**: Continuously monitor user interactions with your chatbot to identify areas for improvement and make necessary adjustments.",
+        "response_time": 14.418056011199951,
+        "expected_keywords": [
+          "chatbot",
+          "language model",
+          "interface",
+          "RAG",
+          "implementation"
+        ],
+        "keywords_found": [
+          "chatbot"
+        ],
+        "keyword_score": 0.2,
+        "category": "basic_rag"
+      },
+      {
+        "query": "What are the best practices for fine-tuning?",
+        "response": " Fine-tuning is a process used to adapt pre-trained models to specific tasks or datasets. Here are some best practices for fine-tuning:\n\n1. Choose the right pre-trained model: Select a pre-trained model that is suitable for your task. For example, BERT is often used for natural language processing tasks, while ResNet is commonly used for image classification tasks.\n\n2. Prepare the dataset: Make sure your dataset is clean, balanced, and correctly labeled. It's important to have a large enough dataset to effectively fine-tune the model.\n\n3. Data augmentation: Use data augmentation techniques such as rotation, scaling, flipping, etc., for images. For text data, techniques like synonym replacement or random insertion/deletion can be used.\n\n4. Split your dataset: Divide your dataset into training, validation, and testing sets to evaluate the model's performance during fine-tuning.\n\n5. Learning rate: Start with a low learning rate and gradually increase it if necessary. A lower learning rate helps in avoiding overshooting during the early stages of training.\n\n6. Warmup strategy: Use warmup strategies like linear warmup or cosine annealing to slowly increase the learning rate during the initial training phases.\n\n7. Early stopping: Implement early stopping to prevent overfitting. This technique stops training when the validation loss stops improving for a certain number of epochs.\n\n8. Regularization: Use techniques like L2 regularization or dropout to prevent overfitting by adding a penalty on large weights or randomly dropping out some neurons during training.\n\n9. Monitor performance: Keep track of the model's performance on both the training and validation sets, as well as any relevant metrics for your specific task.\n\n10. Experimentation: Fine-tune with different hyperparameters to find the optimal settings for your specific task and dataset.\n\n11. Fine-tuning schedule: Determine the number of layers to fine-tune and decide whether to freeze some layers during training. For example, you might only fine-tune the last few layers of a deep neural network while keeping the earlier layers fixed.\n\n12. Use transfer learning: Transfer learning is a technique where you take a pre-trained model and further train it on your specific task. This allows the model to leverage knowledge from a large dataset during the initial training phase, resulting in faster convergence and improved performance.",
+        "response_time": 18.646052837371826,
+        "expected_keywords": [
+          "fine-tuning",
+          "LoRA",
+          "QLoRA",
+          "learning rate",
+          "validation"
+        ],
+        "keywords_found": [
+          "fine-tuning",
+          "learning rate",
+          "validation"
+        ],
+        "keyword_score": 0.6,
+        "category": "advanced_rag"
+      },
+      {
+        "query": "Explain RAG systems",
+        "response": " RAG (Red, Amber, Green) systems are a simple yet effective tool used for visualizing and communicating the status or performance level of projects, tasks, or key indicators within an organization. The system uses three colors to represent different levels of performance:\n\n1. Red (R): Represents poor performance, urgent action required. This could indicate that a project is at risk, targets are not being met, or there are significant issues that need immediate attention.\n2. Amber (A): Represents caution or warning, potential problems, or areas for improvement. It suggests that while the current status is not ideal, there's still time to take corrective action and address any concerns before they escalate into critical issues.\n3. Green (G): Represents good performance, all is well, or on track. This indicates that a project is progressing as planned, targets are being met, and there are no significant concerns that would require immediate attention.\n\nRAG systems can be applied to various areas in an organization, such as project status reports, risk assessments, service level agreements (SLAs), and performance dashboards. They help decision-makers quickly understand the overall health of a given project or indicator and prioritize their focus accordingly. By regularly monitoring and reporting using RAG systems, organizations can proactively manage risks, improve efficiency, and drive better results.",
+        "response_time": 10.014933109283447,
+        "expected_keywords": [
+          "RAG",
+          "retrieval",
+          "augmented",
+          "generation",
+          "context"
+        ],
+        "keywords_found": [
+          "RAG"
+        ],
+        "keyword_score": 0.2,
+        "category": "advanced_rag"
+      },
+      {
+        "query": "What is LoRA?",
+        "response": " LoRa (Long Range) is a low-power, long-range wireless communication technology that is designed for Internet of Things (IoT) applications. It was developed by Semtech Corporation and operates in the industrial, scientific, and medical (ISM) radio bands at 868 MHz (in Europe), 915 MHz (in North America), or 433 MHz (worldwide).\n\nLoRa technology uses a chirp spread spectrum modulation technique to transmit data over long distances (up to several kilometers in rural areas and hundreds of meters in urban areas) with very low power consumption. This makes it ideal for battery-powered IoT devices that need to send small amounts of data over long periods without frequent battery changes.\n\nLoRa networks can be either public (operated by network service providers) or private (deployed by organizations for their specific needs). They typically consist of LoRa gateways, which receive signals from LoRa nodes (devices), and a network server, which manages the communication between the gateways and the application servers that process the data.\n\nLoRa is a key technology in the development of smart cities, agriculture, logistics, and other IoT applications where long-range connectivity and low power consumption are essential requirements.",
+        "response_time": 9.468404054641724,
+        "expected_keywords": [
+          "LoRA",
+          "low-rank",
+          "adaptation",
+          "efficient",
+          "fine-tuning"
+        ],
+        "keywords_found": [
+          "LoRA"
+        ],
+        "keyword_score": 0.2,
+        "category": "advanced_rag"
+      }
+    ],
+    "summary": {
+      "total_tests": 5,
+      "average_score": 0.24,
+      "average_response_time": 16.5109751701355,
+      "score_by_category": {
+        "basic_rag": 0.1,
+        "advanced_rag": 0.3333333333333333
+      }
+    }
+  },
+  "fine_tuned_results": {
+    "model": "deepseek-r1:latest",
+    "timestamp": "2025-08-14T18:59:45.144541",
+    "test_cases": [
+      {
+        "query": "What is machine learning?",
+        "response": "Exception: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=30)",
+        "response_time": 30.006800889968872,
+        "expected_keywords": [
+          "machine learning",
+          "artificial intelligence",
+          "algorithms",
+          "data"
+        ],
+        "keywords_found": [],
+        "keyword_score": 0.0,
+        "category": "basic_rag"
+      },
+      {
+        "query": "How do I implement a chatbot?",
+        "response": "Exception: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=30)",
+        "response_time": 30.010596990585327,
+        "expected_keywords": [
+          "chatbot",
+          "language model",
+          "interface",
+          "RAG",
+          "implementation"
+        ],
+        "keywords_found": [],
+        "keyword_score": 0.0,
+        "category": "basic_rag"
+      },
+      {
+        "query": "What are the best practices for fine-tuning?",
+        "response": "Exception: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=30)",
+        "response_time": 30.005592107772827,
+        "expected_keywords": [
+          "fine-tuning",
+          "LoRA",
+          "QLoRA",
+          "learning rate",
+          "validation"
+        ],
+        "keywords_found": [],
+        "keyword_score": 0.0,
+        "category": "advanced_rag"
+      },
+      {
+        "query": "Explain RAG systems",
+        "response": "<think>\n\n</think>\n\nRAG (Retrieval-Augmented Generation) systems are a type of AI model that combines retrieval and generation components to improve the quality of generated text. Here's an overview:\n\n### Key Components:\n1. **Retrieval Component**: \n   - This component uses pre-trained models or external knowledge sources (like documents, web pages, or databases) to search for relevant information.\n   - It retrieves passages or snippets that are most pertinent to the query or task.\n\n2. **Generation Component**:\n   - This is typically a language model (e.g., GPT, T5) that generates text based on the retrieved information.\n   - The generated text can be augmented with the retrieved content to improve relevance, coherence, or diversity.\n\n### How RAG Systems Work:\n1. **Query Understanding**: \n   - The system first processes the user's query and identifies key components (e.g., intent, entities, relationships).\n\n2. **Retrieval**:\n   - The retrieval component searches for relevant documents or passages that match the query.\n   - These retrieved passages are often contextualized to better align with the user's needs.\n\n3. **Generation**:\n   - The generation component uses the retrieved information as input to produce a more informed and coherent response.\n   - This can involve selecting, paraphrasing, or integrating parts of the retrieved content into the generated text.\n\n4. **Output**:\n   - The final output is a combination of user query understanding, retrieved information, and generated text, resulting in a more accurate and contextually relevant response.\n\n### Benefits of RAG Systems:\n- **Improved Accuracy**: By leveraging external knowledge, RAG systems can generate more accurate and contextually appropriate responses.\n- **Contextual Understanding**: Retrieval helps bridge the gap between general knowledge and specific user queries.\n- **Handling Long-Tail Queries**: RAG systems can provide relevant answers to niche or less common questions by retrieving specialized information.\n\n### Applications:\n- **\u95ee\u7b54\u7cfb\u7edf (Question Answering)**: Enhancing chatbots with more accurate and context-aware responses.\n- **\u5185\u5bb9\u751f\u6210 (Content Generation)**: Assisting in writing articles, reports, or creative content by providing factual support.\n- **\u5bf9\u8bdd\u7cfb\u7edf (Dialogue Systems)**: Improving conversational agents to better understand user intents and provide relevant information.\n\n### Challenges:\n- **Efficiency**: Retrieving large amounts of text can be computationally expensive, especially for real-time applications.\n- **Relevance Ranking**: Ensuring that the most pertinent passages are retrieved and used effectively remains a challenge.\n- **Integration**: Combining retrieval and generation components seamlessly while maintaining performance is complex.\n\nRAG systems represent a promising direction in AI research, offering a way to integrate structured knowledge into unstructured text generation tasks.",
+        "response_time": 21.203442811965942,
+        "expected_keywords": [
+          "RAG",
+          "retrieval",
+          "augmented",
+          "generation",
+          "context"
+        ],
+        "keywords_found": [
+          "RAG",
+          "retrieval",
+          "augmented",
+          "generation",
+          "context"
+        ],
+        "keyword_score": 1.0,
+        "category": "advanced_rag"
+      },
+      {
+        "query": "What is LoRA?",
+        "response": "<think>\n\n</think>\n\nLoRA (Low-Rank Adaptation) \u662f\u4e00\u79cd\u53c2\u6570\u7cbe\u70bc\u65b9\u6cd5\uff0c\u5e7f\u6cdb\u5e94\u7528\u4e8e\u5927\u8bed\u8a00\u6a21\u578b\uff08\u5982 LLaMA\u3001T5\uff09\u7684\u5fae\u8c03\u4efb\u52a1\u4e2d\u3002\u5176\u6838\u5fc3\u601d\u60f3\u662f\u901a\u8fc7\u5206\u89e3\u6743\u91cd\u77e9\u9635\uff0c\u51cf\u5c11\u6a21\u578b\u53c2\u6570\u91cf\u7684\u540c\u65f6\u4fdd\u6301\u6a21\u578b\u6027\u80fd\u3002\n\n### \u6838\u5fc3\u6982\u5ff5\n1. **\u4f4e\u79e9\u5206\u89e3**\uff1a\n   - \u5c06\u6743\u91cd\u77e9\u9635\u5206\u89e3\u4e3a\u4e24\u4e2a\u4f4e\u7ef4\u77e9\u9635\u7684\u4e58\u79ef\u3002\n   - \u4f8b\u5982\uff0c\u5c06\u4e00\u4e2a $D \\times D$ \u7684\u6743\u91cd\u77e9\u9635 $W$ \u5206\u89e3\u4e3a $D \\times r$ \u548c $r \\times D$ \u7684\u4e24\u4e2a\u77e9\u9635\uff0c\u5176\u4e2d $r \\ll D$\u3002\n\n2. **\u53c2\u6570\u7cbe\u70bc**\uff1a\n   - \u901a\u8fc7\u4f4e\u79e9\u5206\u89e3\u51cf\u5c11\u6a21\u578b\u53c2\u6570\u91cf\u3002\n   - \u4fdd\u7559\u5bf9\u4efb\u52a1\u9002\u5e94\u81f3\u5173\u91cd\u8981\u7684\u53c2\u6570\uff0c\u540c\u65f6\u538b\u7f29\u5176\u4ed6\u53c2\u6570\u3002\n\n### \u4e3b\u8981\u601d\u60f3\n1. **\u521d\u59cb\u5316**\uff1a\n   - \u4f7f\u7528\u9884\u8bad\u7ec3\u6743\u91cd\u4f5c\u4e3a\u57fa\u7840\u53c2\u6570\u3002\n2. **\u4f18\u5316\u76ee\u6807**\uff1a\n   - \u5728\u4fdd\u6301\u4f4e\u53c2\u6570\u91cf\u7684\u540c\u65f6\uff0c\u4f7f\u6a21\u578b\u8f93\u51fa\u63a5\u8fd1\u771f\u5b9e\u6807\u7b7e\u3002\n3. **\u68af\u5ea6\u4f20\u64ad**\uff1a\n   - \u53ea\u66f4\u65b0\u5206\u89e3\u540e\u7684\u53c2\u6570\uff0c\u4e0d\u76f4\u63a5\u66f4\u65b0\u539f\u59cb\u6743\u91cd\u77e9\u9635\u3002\n\n### \u4f18\u70b9\n1. **\u9ad8\u6548\u6027**\uff1a\n   - \u663e\u8457\u51cf\u5c11\u6a21\u578b\u53c2\u6570\u91cf\uff0c\u964d\u4f4e\u8ba1\u7b97\u548c\u5b58\u50a8\u6210\u672c\u3002\n2. **\u53ef\u6269\u5c55\u6027**\uff1a\n   - \u5bb9\u6613\u5e94\u7528\u4e8e\u5927\u89c4\u6a21\u6a21\u578b\u548c\u6570\u636e\u96c6\u3002\n3. **\u7075\u6d3b\u6027**\uff1a\n   - \u53ef\u7528\u4e8e\u591a\u79cd\u4e0b\u6e38\u4efb\u52a1\uff0c\u5982\u6587\u672c\u751f\u6210\u3001\u5206\u7c7b\u7b49\u3002\n\n### \u5e94\u7528\u573a\u666f\n1. **\u5fae\u8c03\u4efb\u52a1**\uff1a\n   - \u5728\u5df2\u6709\u9884\u8bad\u7ec3\u6a21\u578b\u57fa\u7840\u4e0a\u5feb\u901f\u9002\u5e94\u65b0\u4efb\u52a1\u3002\n2. **\u8d44\u6e90\u53d7\u9650\u73af\u5883**\uff1a\n   - \u4f8b\u5982\uff0c\u5728\u8fb9\u7f18\u8bbe\u5907\u4e0a\u90e8\u7f72\u5927\u8bed\u8a00\u6a21\u578b\u3002\n\n### \u793a\u4f8b\n\u5bf9\u4e8e\u4e00\u4e2a\u6709 $n$ \u4e2a\u53c2\u6570\u7684\u6a21\u578b\uff0cLoRA \u53ef\u4ee5\u5c06\u5176\u51cf\u5c11\u5230 $r \\times n$\uff0c\u5176\u4e2d $r$ \u662f\u538b\u7f29\u56e0\u5b50\u3002\u901a\u5e38\uff0c$r=32$ \u5de6\u53f3\u5373\u53ef\u6ee1\u8db3\u4efb\u52a1\u9700\u6c42\u3002\n\n### \u603b\u7ed3\nLoRA \u662f\u4e00\u79cd\u6709\u6548\u7684\u53c2\u6570\u7cbe\u70bc\u65b9\u6cd5\uff0c\u901a\u8fc7\u4f4e\u79e9\u5206\u89e3\u5728\u4fdd\u6301\u6027\u80fd\u7684\u540c\u65f6\u5927\u5e45\u51cf\u5c11\u6a21\u578b\u53c2\u6570\u91cf\uff0c\u7279\u522b\u9002\u7528\u4e8e\u5927\u8bed\u8a00\u6a21\u578b\u7684\u5fae\u8c03\u4efb\u52a1\u3002",
+        "response_time": 17.01335883140564,
+        "expected_keywords": [
+          "LoRA",
+          "low-rank",
+          "adaptation",
+          "efficient",
+          "fine-tuning"
+        ],
+        "keywords_found": [
+          "LoRA",
+          "low-rank",
+          "adaptation"
+        ],
+        "keyword_score": 0.6,
+        "category": "advanced_rag"
+      }
+    ],
+    "summary": {
+      "total_tests": 5,
+      "average_score": 0.32,
+      "average_response_time": 25.647958326339722,
+      "score_by_category": {
+        "basic_rag": 0.0,
+        "advanced_rag": 0.5333333333333333
+      }
+    }
+  },
+  "improvements": {
+    "score_improvement": 0.08000000000000002,
+    "score_improvement_pct": 33.33333333333334,
+    "improved": true
+  }
+}

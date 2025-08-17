@@ -9,3 +9,4 @@ from .embeddings import EmbeddingGenerator
 from .indexer import DocumentIndexer
 
 __all__ = ['ChromaStore', 'EmbeddingGenerator', 'DocumentIndexer']
+

@@ -49,7 +49,7 @@ class StreamlitRAGIntegration:
             st.error(f"Failed to initialize RAG pipeline: {str(e)}")
             return False
     
-    def render_rag_sidebar(self):
+    def render_rag_sidebar(self, enable_checkbox=True, key_prefix="rag"):
         """Render RAG controls in the sidebar."""
         if not self.initialize_rag():
             return
@@ -57,8 +57,11 @@ class StreamlitRAGIntegration:
         st.sidebar.markdown("---")
         st.sidebar.markdown("### 📚 RAG Settings")
         
-        # RAG toggle
-        use_rag = st.sidebar.checkbox("Enable RAG", value=True, help="Enable document retrieval and context injection")
+        # RAG toggle (only show if enable_checkbox is True)
+        if enable_checkbox:
+            use_rag = st.sidebar.checkbox("Enable RAG", value=True, help="Enable document retrieval and context injection", key=f"{key_prefix}_enable_checkbox")
+        else:
+            use_rag = True  # Always enabled when checkbox is hidden
         
         # Document upload
         st.sidebar.markdown("#### Upload Documents")
@@ -66,11 +69,12 @@ class StreamlitRAGIntegration:
             "Choose documents to index",
             type=['pdf', 'txt', 'docx', 'md', 'html'],
             accept_multiple_files=True,
-            help="Upload documents to enable RAG capabilities"
+            help="Upload documents to enable RAG capabilities",
+            key=f"{key_prefix}_file_uploader"
         )
         
         # Index documents
-        if uploaded_files and st.sidebar.button("Index Documents"):
+        if uploaded_files and st.sidebar.button("Index Documents", key=f"{key_prefix}_index_button"):
             self._index_uploaded_files(uploaded_files)
         
         # RAG parameters
@@ -82,7 +86,8 @@ class StreamlitRAGIntegration:
                 min_value=1, 
                 max_value=10, 
                 value=5,
-                help="Number of most relevant documents to retrieve"
+                help="Number of most relevant documents to retrieve",
+                key=f"{key_prefix}_top_k_slider"
             )
             
             similarity_threshold = st.sidebar.slider(
@@ -91,7 +96,8 @@ class StreamlitRAGIntegration:
                 max_value=1.0,
                 value=0.7,
                 step=0.05,
-                help="Minimum similarity score for document retrieval"
+                help="Minimum similarity score for document retrieval",
+                key=f"{key_prefix}_similarity_slider"
             )
             
             max_context_length = st.sidebar.slider(
@@ -100,7 +106,8 @@ class StreamlitRAGIntegration:
                 max_value=8000,
                 value=4000,
                 step=500,
-                help="Maximum length of context in characters"
+                help="Maximum length of context in characters",
+                key=f"{key_prefix}_context_length_slider"
             )
             
             # Update parameters
@@ -264,3 +271,4 @@ class StreamlitRAGIntegration:
         
         with st.expander("🔍 RAG Debug Info"):
             st.json(rag_response)
+

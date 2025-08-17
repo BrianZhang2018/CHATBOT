@@ -1,0 +1,61 @@
+# Fine-tuning Configuration
+
+# Data collection
+data_collection:
+  log_file: "conversations.jsonl"
+  min_conversation_length: 10
+  max_conversation_length: 1000
+  auto_export: true
+  export_interval: 100  # conversations
+
+# Data preparation
+data_preparation:
+  format_type: "chatml"  # chatml, alpaca, instruction
+  max_length: 2048
+  train_ratio: 0.8
+  validation_ratio: 0.1
+  test_ratio: 0.1
+
+# Training
+training:
+  method: "qlora"  # lora, qlora, full
+  base_model: "mistral:7b-instruct-q4_0"
+  output_dir: "./fine_tuned_models"
+  
+  # LoRA/QLoRA parameters
+  lora_r: 16
+  lora_alpha: 32
+  lora_dropout: 0.1
+  target_modules: ["q_proj", "v_proj"]
+  
+  # Training parameters
+  batch_size: 4
+  learning_rate: 2e-4
+  num_epochs: 3
+  warmup_steps: 100
+  gradient_accumulation_steps: 4
+  max_grad_norm: 0.3
+  
+  # Quantization (QLoRA)
+  quantization:
+    bits: 4
+    group_size: 128
+    double_quant: true
+
+# Evaluation
+evaluation:
+  metrics: ["perplexity", "accuracy", "bleu", "rouge"]
+  test_prompts: [
+    "What is machine learning?",
+    "Explain neural networks",
+    "How does RAG work?"
+  ]
+  comparison_models: ["base_model", "previous_fine_tuned"]
+
+# Model deployment
+deployment:
+  ollama_base_url: "http://localhost:11434"
+  auto_deploy: true
+  model_name_prefix: "fine_tuned_"
+  registry_file: "model_registry.json"
+

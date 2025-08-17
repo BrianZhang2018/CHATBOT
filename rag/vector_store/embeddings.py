@@ -141,3 +141,4 @@ class EmbeddingGenerator:
         # Compute cosine similarities
         similarities = np.dot(document_embeddings, query_embedding) / (doc_norms * query_norm)
         return similarities
+
