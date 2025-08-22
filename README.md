@@ -30,6 +30,118 @@ chatbot/
 └── README.md
 ```
 
+## 🔄 Application Workflow
+
+### **📱 Main Interface: `my_app.py`**
+
+Our comprehensive Streamlit application provides three main pages:
+
+```mermaid
+graph TD
+    A[🌐 Launch my_app.py] --> B{Choose Page}
+    
+    B --> C[💬 Chat Page]
+    B --> D[📚 Document Manager]
+    B --> E[⚙️ Settings Page]
+    
+    C --> C1[📝 Type Message]
+    C1 --> C2{RAG Enabled?}
+    C2 -->|Yes| C3[🔍 Search Documents]
+    C2 -->|No| C4[🤖 Direct LLM]
+    C3 --> C5[📄 Retrieve Context]
+    C5 --> C6[🧠 Enhanced Response]
+    C4 --> C6
+    C6 --> C7[💬 Display Answer]
+    
+    D --> D1[📤 Upload Documents]
+    D1 --> D2[🔧 Process & Index]
+    D2 --> D3[🗄️ Store in ChromaDB]
+    D3 --> D4[📋 Manage Library]
+    
+    E --> E1[🔧 Configure Models]
+    E1 --> E2[⚙️ Adjust Parameters]
+    E2 --> E3[📊 View System Info]
+    
+    style A fill:#e1f5fe
+    style C6 fill:#c8e6c9
+    style D3 fill:#fff3e0
+    style E3 fill:#f3e5f5
+```
+
+### **🔄 Complete User Journey**
+
+1. **🚀 Start Application**
+   ```bash
+   cd ui/streamlit_app
+   streamlit run my_app.py --server.port 8502
+   ```
+
+2. **📚 Setup Knowledge Base (Optional)**
+   - Navigate to **Document Manager** page
+   - Upload documents (PDF, TXT, DOCX, MD, HTML)
+   - System automatically processes and indexes them
+   - Documents become searchable for RAG
+
+3. **💬 Chat with AI**
+   - Go to **Chat** page
+   - Configure model and parameters in sidebar
+   - Enable RAG for document-enhanced responses
+   - Ask questions and get contextual answers
+
+4. **⚙️ Fine-tune Experience**
+   - Visit **Settings** page
+   - Monitor system status
+   - Adjust model parameters
+   - View performance metrics
+
+### **🧠 RAG-Enhanced Conversation Flow**
+
+```
+User Question → Document Search → Context Retrieval → Enhanced Prompt → LLM Response
+      ↓               ↓                ↓                 ↓            ↓
+"What is ML?" → Find ML docs → Extract context → "Based on docs..." → Smart Answer
+```
+
+### **📊 System Integration**
+
+```
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Streamlit UI  │←→│   RAG Pipeline  │←→│   ChromaDB      │
+│   (my_app.py)   │    │                 │    │   (Vectors)     │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+         ↓                       ↓                       ↑
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Ollama API    │    │  Document Proc. │    │   User Docs     │
+│   (Local LLM)   │    │   (Chunking)    │    │   (PDF/TXT)     │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+```
+
+### **✨ Key Workflow Features**
+
+#### **🎯 Smart Conversation**
+- **Context-Aware**: Responses based on your documents
+- **Multi-Turn**: Maintains conversation history
+- **Flexible**: Toggle RAG on/off as needed
+- **Transparent**: Shows source documents used
+
+#### **📚 Document Management**
+- **Multi-Format**: PDF, TXT, DOCX, Markdown, HTML
+- **Auto-Processing**: Automatic chunking and indexing
+- **Search & Test**: Built-in document search testing
+- **Library Management**: View, organize, delete documents
+
+#### **⚙️ Customization**
+- **Model Selection**: Choose from available Ollama models
+- **Parameter Tuning**: Temperature, tokens, top-p, top-k
+- **RAG Settings**: Similarity threshold, context length
+- **Export/Import**: Save and restore conversations
+
+#### **🔄 Real-Time Features**
+- **Live Processing**: Documents indexed immediately
+- **Instant Search**: Fast vector similarity search (~50ms)
+- **Streaming UI**: Responsive interface with progress indicators
+- **Error Handling**: Graceful fallbacks and error messages
+
 ## 🚀 Quick Start
 
 ### Phase 1: Base Setup

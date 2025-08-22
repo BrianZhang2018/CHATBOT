@@ -224,3 +224,4 @@ class ContextBuilder:
             self.include_metadata = include_metadata
             logger.info(f"Updated include_metadata to {include_metadata}")
 
+

@@ -184,3 +184,4 @@ class TextChunker:
         logger.info(f"Total chunks created: {len(all_chunks)}")
         return all_chunks
 
+

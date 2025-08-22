@@ -246,3 +246,4 @@ class RAGPipeline:
         """
         self.context_builder.update_context_parameters(max_context_length, include_metadata)
 
+

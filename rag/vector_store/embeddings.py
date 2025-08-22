@@ -142,3 +142,4 @@ class EmbeddingGenerator:
         similarities = np.dot(document_embeddings, query_embedding) / (doc_norms * query_norm)
         return similarities
 
+

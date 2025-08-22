@@ -210,3 +210,4 @@ class DocumentIndexer:
             logger.error(f"Error resetting index: {str(e)}")
             raise
 
+

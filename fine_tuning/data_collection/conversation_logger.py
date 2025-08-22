@@ -230,3 +230,4 @@ class ConversationLogger:
             self.logger.error(f"Error getting recent conversations: {str(e)}")
             return []
 
+

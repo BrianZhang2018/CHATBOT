@@ -144,3 +144,4 @@ class DocumentRetriever:
             logger.error(f"Error getting retrieval stats: {str(e)}")
             return {}
 
+
