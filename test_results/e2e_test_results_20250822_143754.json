@@ -1,0 +1,25 @@
+{
+  "base_model": "microsoft/DialoGPT-medium",
+  "fine_tuned_model": "microsoft/DialoGPT-medium",
+  "test_cases": 9,
+  "timestamp": "2025-08-22T14:37:36.668415",
+  "results": [],
+  "base_summary": {
+    "total_tests": 9,
+    "average_overall_score": 0.08888888888888889,
+    "average_keyword_score": 0.0,
+    "average_context_score": 0.2222222222222222,
+    "average_response_time": 0.007644971211751302,
+    "score_by_category": {
+      "basic_rag": 0.0,
+      "advanced_rag": 0.0,
+      "context_awareness": 0.0,
+      "non_rag": 0.4
+    },
+    "score_by_difficulty": {
+      "easy": 0.2,
+      "medium": 0.0,
+      "hard": 0.0
+    },
+    "top_performers": [
+      

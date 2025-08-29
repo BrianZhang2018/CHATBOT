@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-08-22T14:42:17.721052",
+  "project_path": "/Users/brianzhang/ai/chatbot",
+  "tests": {
+    "environment_setup": {
+      "status": "PASS",
+      "details": [
+        "Python version: 3.11.13",
+        "torch: 2.7.1",
+        "transformers: 4.54.0",
+        "streamlit: 1.47.1",
+        "chromadb: 0.4.22",
+        "sentence_transformers: 5.0.0",
+        "gradio: 5.42.0",
+        "peft: 0.16.0",
+        "Ollama connected with 2 models",
+        "  - mistral:7b-instruct",
+        "  - deepseek-r1:latest"
+      ],
+      "issues": []
+    },
+    "ollama_integration": {
+      "status": "PASS",
+      "details": [
+        "Generation test successful: 'The sum of 2 and 2 is 4....'",
+        "Model provided correct answer"
+      ],
+      "issues": []
+    },
+    "vector_database": {
+      "status": "PASS",
+      "details": [
+        "ChromaDB persist directory found: ./data/embeddings",
+        "Found 1 collections",
+        "Collection 'documents' has 7 documents"
+      ],
+      "issues": []
+    },
+    "rag_pipeline": {
+      "status": "FAIL",
+      "details": [],
+      "issues": [
+        "RAG pipeline error: An instance of Chroma already exists for ./data/embeddings with different settings"
+      ]
+    },
+    "fine_tuning_system": {
+      "status": "FAIL",
+      "details": [
+        "LoRA file found: adapter_config.json",
+        "LoRA file found: adapter_model.safetensors",
+        "TrainingDataFormatter imported successfully"
+      ],
+      "issues": [
+        "Fine-tuning component error: TrainingDataFormatter.format_conversation() takes 2 positional arguments but 3 were given"
+      ]
+    },
+    "streamlit_app": {
+      "status": "PASS",
+      "details": [
+        "Streamlit app imports successful",
+        "Streamlit app is running at http://localhost:8504",
+        "RAG integration component initialized successfully"
+      ],
+      "issues": []
+    }
+  },
+  "summary": {
+    "total_tests": 6,
+    "passed": 4,
+    "failed": 2,
+    "warnings": 0,
+    "success_rate": 66.66666666666666
+  }
+}
