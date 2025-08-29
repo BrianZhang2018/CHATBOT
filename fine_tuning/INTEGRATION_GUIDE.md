@@ -267,3 +267,4 @@ print(f"Total conversations: {stats.get('total_conversations', 0)}")
 The integration is designed to be **non-intrusive** - it won't affect your existing chatbot functionality, but will automatically collect high-quality training data! 🎯
 
 
+

@@ -48,3 +48,4 @@ echo "📱 Web interfaces:"
 echo "   - Document Manager: http://localhost:8501"
 echo "   - Vector DB Playground: python vector_db_playground_with_chromadb.py"
 
+
